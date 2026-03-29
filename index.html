@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>透明视频播放器</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    video {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9999;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>video</title>
+    <style>
+        body {
+            background: #222;
+            text-align: center;
+            padding-top: 40px;
+        }
+        video {
+            max-width: 90%;
+        }
+    </style>
 </head>
 <body>
 
-<video autoplay muted loop playsinline>
-  <source src="video.webm" type="video/webm">
-  您的浏览器不支持视频播放。
-</video>
+    <h2 style="color:#fff;">video.webm</h2>
+
+    <video controls autoplay muted>
+        <source src="video.webm" type="video/webm">
+        您的浏览器不支持 video 标签
+    </video>
 
 </body>
 </html>
