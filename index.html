@@ -2,26 +2,30 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>video</title>
+    <title>Video Player</title>
     <style>
         body {
             background: #222;
             text-align: center;
             padding-top: 40px;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
         }
         video {
             max-width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.2);
         }
     </style>
 </head>
 <body>
 
-    <h2 style="color:#fff;">video.webm</h2>
+    <h2>我的视频（MP4 格式）</h2>
 
-    <video controls autoplay muted>
-        <source src="video.webm" type="video/webm">
-        您的浏览器不支持 video 标签
-    </video>
-
-</body>
-</html>
+    <!-- 视频播放器 -->
+    <video controls autoplay muted loop>
+        <!-- 优先加载 MP4，兼容性最好 -->
+        <source src="video.mp4" type="video/mp4">
