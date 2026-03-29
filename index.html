@@ -2,33 +2,53 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Video Page</title>
+    <title>One-Click Auto Video</title>
     <style>
         body {
-            background: #111;
-            text-align: center;
-            padding-top: 40px;
-            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        h2 {
-            color: #fff;
-            margin-bottom: 20px;
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
         }
         video {
-            max-width: 90%;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(255,255,255,0.15);
+            width: 90%;
+            max-width: 900px;
+            display: none; /* 初始隐藏 */
         }
     </style>
 </head>
 <body>
 
-    <h2>我的视频</h2>
+    <button class="btn" onclick="playVideo()">点击开始播放</button>
 
-    <video controls autoplay muted loop>
-        <source src="video.mp4" type="video/mp4">
-        您的浏览器不支持 video 标签
+    <video
+        id="myVideo"
+        src="video.mp4"
+        autoplay
+        controls
+        loop
+        playsinline>
     </video>
+
+    <script>
+        function playVideo() {
+            const video = document.getElementById('myVideo');
+            video.style.display = 'block'; // 显示视频
+            video.play();                  // 播放视频
+            document.querySelector('.btn').style.display = 'none'; // 隐藏按钮
+        }
+    </script>
 
 </body>
 </html>
